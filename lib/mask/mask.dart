@@ -16,6 +16,17 @@ class Mask {
     return GenericMask(mask: ['###.###.###-##']);
   }
 
+  /// use to format CEP fields
+  /// ```dart
+  /// TextFormField(
+  ///   autovalidateMode: AutovalidateMode.onUserInteraction,
+  ///   inputFormatters: [Mask.cep()],
+  /// ),
+  /// ```
+  static TextInputFormatter cep() {
+    return GenericMask(mask: ['##.###-###']);
+  }
+
   /// use to format creditCard fields
   /// ```dart
   /// TextFormField(
