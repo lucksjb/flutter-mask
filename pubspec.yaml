@@ -1,9 +1,10 @@
 name: mask
 description: This project is for you to be able to make validations and formatting in a simple and easy way in your projects
 version: 1.0.4
-homepage: https://github.com/welitonsousa/mask
-repository: https://github.com/welitonsousa/mask
-issue_tracker: https://github.com/welitonsousa/mask/issues
+publish_to: none
+# homepage: https://github.com/welitonsousa/mask
+# repository: https://github.com/welitonsousa/mask
+# issue_tracker: https://github.com/welitonsousa/mask/issues
 
 
 environment:
@@ -13,7 +14,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-publish_to: none
 
 dev_dependencies:
   flutter_test:
