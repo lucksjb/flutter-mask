@@ -114,7 +114,6 @@ class Validations {
     String error = 'Cartão de crédido inválido',
   }) {
     if (CreditCardValidator.isValid(value ?? "")) return null;
-
     return error;
   }
 
