@@ -1,6 +1,7 @@
 import 'dart:math' as mat;
 
 import 'package:flutter/material.dart';
+import 'package:mask/validations/modules/validation_credit_card.dart';
 
 import 'modules/validation_cnpj.dart';
 import 'modules/validation_cpf.dart';
@@ -87,6 +88,34 @@ class Validations {
     String? response = cpf(value, error: errorCPF);
     if (response != null) response = cnpj(value, error: errorCNPJ);
     return response;
+  }
+
+  /// use to validate creditCard fields
+  /// ```dart
+  /// TextFormField(
+  ///   autovalidateMode: AutovalidateMode.onUserInteraction,
+  ///   validator: (value) => Mask.validations.creditCard(
+  ///     value,
+  ///     error: 'your message error', // optional field
+  ///   ),
+  /// ),
+  /// ```
+  ///
+  ///------------   or   ------------
+  ///
+  /// ```dart
+  /// TextFormField(
+  ///   autovalidateMode: AutovalidateMode.onUserInteraction,
+  ///   validator: Mask.validations.creditCard,
+  /// ),
+  /// ```
+  String? creditCard(
+    String? value, {
+    String error = 'Cartão de crédido inválido',
+  }) {
+    if (CreditCardValidator.isValid(value ?? "")) return null;
+
+    return error;
   }
 
   /// use to validate money fields
